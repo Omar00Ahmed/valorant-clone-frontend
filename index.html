@@ -8,6 +8,51 @@
   </head>
   <body>
     <div id="app">
+
+      <div id="app">
+        <!-- Top HUD -->
+        <div class="hud top-hud">
+          <div class="player-list">
+            <div class="team team-left">
+              <div class="player">
+                <span class="player-name">Player 1</span>
+                <span class="player-health">100</span>
+              </div>
+              <div class="player">
+                <span class="player-name">Player 2</span>
+                <span class="player-health">100</span>
+              </div>
+            </div>
+            <div class="team team-right">
+              <div class="player">
+                <span class="player-name">Player 3</span>
+                <span class="player-health">100</span>
+              </div>
+              <div class="player">
+                <span class="player-name">Player 4</span>
+                <span class="player-health">100</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Bottom HUD -->
+        <div class="hud bottom-hud">
+          <div class="player-info">
+            <div class="health" id="currentPlayerHeal">100 HP</div>
+            <!-- <div class="shield">100 SHIELD</div> -->
+          </div>
+          <div class="abilities">
+            <div class="ability">Q</div>
+            <div class="ability">E</div>
+            <div class="ability">C</div>
+            <div class="ultimate">X</div>
+          </div>
+          <div class="ammo" id="currentAmmo">30/90</div>
+        </div>
+        <canvas id="mycanvas"></canvas>
+      </div>
+      
       <canvas id="mycanvas"></canvas>
     </div>
     <script type="module" src="/main.js"></script>

@@ -44,8 +44,8 @@ export class BoxManager {
         }
     }
 
-    draw(ctx) {
-        this.boxes.forEach(box => box.draw(ctx));
+    draw(ctx,camera) {
+        this.boxes.forEach(box => box.draw(ctx,camera));
     }
 
 }

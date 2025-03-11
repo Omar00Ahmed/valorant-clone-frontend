@@ -76,13 +76,18 @@ export class Bullets {
 
 
     handlePlayerShoot(player, mouseX, mouseY,socket) {
+        if(player.ammo.currentAmmo <= 0){
+            player.noAmmodeSound.currentTime = 0;
+            player.noAmmodeSound.play();
+            return
+        };
         // Calculate angle between player and mouse position
-        const angle = Math.atan2(mouseY - player.y, mouseX - player.x);
+        const angle = Math.atan2(mouseY - (player.y+20), mouseX - (player.x+20));
         
         // Create new bullet
         const bullet = new Bullet(
-            player.x,           
-            player.y,           
+            player.x + 20,           
+            player.y + 20,           
             mouseX,            
             mouseY,           
             angle,             
@@ -112,15 +117,22 @@ export class Bullets {
     
     
 
-    draw(ctx){
+    draw(ctx,camera) {
         this.bullets.forEach(bullet => {
             ctx.beginPath();
-            ctx.arc(bullet.x, bullet.y, 5, 0, 2 * Math.PI);
+            ctx.arc(
+                bullet.x - camera.x, 
+                bullet.y - camera.y, 
+                5, 
+                0, 
+                2 * Math.PI
+            );
             ctx.fillStyle = bullet.color;
             ctx.fill();
             ctx.closePath();
         });
     }
+    
 }
 
 

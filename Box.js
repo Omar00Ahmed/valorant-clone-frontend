@@ -6,8 +6,13 @@ export class Box {
         this.height = height;
     }
 
-    draw(ctx) {
-        ctx.fillStyle = '#8B4513';  // Brown color for boxes
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+    draw(ctx,camera) {
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(
+            this.x - camera.x, 
+            this.y - camera.y, 
+            this.width, 
+            this.height
+        );
     }
 }
